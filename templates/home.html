@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Stroke Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <style>
+    .login {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #f9f9f9;
+    }
+
+    .login h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 28px;
+      text-align: center;
+      color: #333;
+    }
+
+    .login form {
+      font-family: 'Arimo', sans-serif;
+      font-size: 14px;
+    }
+
+    .login form select,
+    .login form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .login form select {
+      height: 35px;
+    }
+
+    .login form button {
+      width: 100%;
+      padding: 10px;
+      background: #333;
+      border: none;
+      border-radius: 3px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login form button:hover {
+      background: #555;
+    }
+
+    .prediction-result {
+      text-align: center;
+      font-family: 'Arimo', sans-serif;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .indication {
+      color: red;
+      font-weight: bold;
+    }
+
+    .no-indication {
+      color: green;
+      font-weight: bold;
+    }
+
+    .error {
+      color: #FF5733;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login">
+    <h1>Stroke Prediction</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict') }}" method="post">
+      <!-- Section 1: Gender -->
+      <label for="gender">Select Gender:</label>
+      <select name="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select><br>
+
+      <!-- Section 2: Age -->
+      <label for="age">Enter Age:</label>
+      <input type="number" step="1" name="age" placeholder="Age" required="required" /><br>
+
+      <!-- Section 3: Average Glucose Level -->
+      <label for="avg_glucose_level">Enter Average Glucose Level:</label>
+      <input type="number" step="any" name="avg_glucose_level" placeholder="Average Glucose Level" required="required" /><br>
+
+      <!-- Section 4: BMI (Body Mass Index) -->
+      <label for "bmi">Enter BMI (Body Mass Index):</label>
+      <input type="number" step="any" name="bmi" placeholder="BMI" required="required" /><br>
+
+      <!-- Section 5: Hypertension -->
+      <label for="hypertension">Select Hypertension Status:</label>
+      <select name="hypertension">
+        <option value="0">No Hypertension</option>
+        <option value="1">Hypertension</option>
+      </select><br>
+
+      <!-- Section 6: Heart Disease -->
+      <label for="heart_disease">Select Heart Disease Status:</label>
+      <select name="heart_disease">
+        <option value="0">No Heart Disease</option>
+        <option value="1">Heart Disease</option>
+      </select><br>
+
+      <!-- Section 7: Ever Married -->
+      <label for="ever_married">Select Marital Status:</label>
+      <select name="ever_married">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select><br>
+
+      <!-- Section 8: Work Type -->
+      <label for="work_type">Select Work Type:</label>
+      <select name="work_type">
+        <option value="Private">Private</option>
+        <option value="Self-employed">Self-employed</option>
+        <option value="Govt_job">Govt_job</option>
+        <option value="children">Children</option>
+        <option value="Never_worked">Never_worked</option>
+      </select><br>
+
+      <!-- Section 9: Residence Type -->
+      <label for="Residence_type">Select Residence Type:</label>
+      <select name="Residence_type">
+        <option value="Urban">Urban</option>
+        <option value="Rural">Rural</option>
+    </select><br>
+
+    <!-- Section 10: Smoking Status -->
+    <label for="smoking_status">Select Smoking Status:</label>
+    <select name="smoking_status">
+      <option value="formerly smoked">Formerly Smoked</option>
+      <option value="never smoked">Never Smoked</option>
+      <option value="smokes">Smokes</option>
+      <option value="Unknown">Unknown</option>
+    </select><br>
+
+    <button type="submit" class="btn btn-primary btn-block btn-large">Do The Prediction</button>
+  </form>
+
+  <br>
+  <br>
+
+  <!-- Section 11: Prediction Result -->
+  <div class="prediction-result">
+    <p>Prediction Result:</p>
+    {% if prediction_text == 1 %}
+      <p class="indication">There is an indication of stroke.</p>
+    {% elif prediction_text == 0 %}
+      <p class="no-indication">There is no indication of stroke.</p>
+    {% else %}
+      <p class="error">Prediction result unavailable.</p>
+    {% endif %}
+  </div>
+</div>
+</body>
+
+</html>
+
