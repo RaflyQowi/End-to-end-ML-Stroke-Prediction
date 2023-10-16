@@ -3,13 +3,17 @@ import numpy as np
 import pandas as pd
 from joblib import dump, load
 from src.utils import LoadClassifierThreshold
+import os
 
 app = Flask(__name__)
 
+model_path = os.path.join('artifacts', 'best_model.pkl')
+threshold_path = os.path.join('artifacts', 'threshold.txt')
+preprocessor_path = os.path.join('artifacts', 'preprocessor.pkl')
 # Load the model and preprocessor
-model = LoadClassifierThreshold(model_path= 'notebook\model\\best_model.pkl',
-                                threshold_path='notebook\model\\threshold.txt')
-preprocessor = load('notebook\model\preprocessor.pkl')
+model = LoadClassifierThreshold(model_path= model_path,
+                                threshold_path=threshold_path)
+preprocessor = load(preprocessor_path)
 
 # Create first route
 @app.route('/')
@@ -63,5 +67,5 @@ def predict():
 
 
 
-if __name__ == '__main__':
-    app.run(debug = True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",port=5000)

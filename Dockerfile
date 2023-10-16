@@ -1,17 +1,17 @@
-# Use a  Python image as the base
-FROM python:3.11
+# Use a slim Python image as the base
+FROM python:3.11-slim
 
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy your application code to the container
-COPY . /app
+# Copy only the necessary files to the container
+COPY app.py requirements.txt ./
+COPY src ./src
+COPY artifacts ./artifacts
+COPY templates ./templates
 
-# Install any needed packages specified in requirements.txt
-RUN pip install -r requirements.txt
+# Install packages and clean up
+RUN pip install -r requirements.txt && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Expose some port
-EXPOSE $PORT
-
-# Run your Flask app
-CMD gunicorn --bind 0.0.0.0:$PORT app:app
+# Run your Flask app with Gunicorn
+CMD ["python", "app.py"]
