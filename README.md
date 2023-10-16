@@ -2,6 +2,21 @@
 
 ## Overview
 Stroke is a leading cause of death and disability worldwide, and early prediction of stroke risk can help prevent or reduce the severity of the disease. However, predicting stroke risk is a challenging task due to the complex interplay of various risk factors, such as age, gender, lifestyle, and medical history. Existing stroke prediction models have limitations in terms of accuracy, interpretability, and generalizability, and there is a need for more robust and reliable models.
+This repository presents a comprehensive solution for stroke prediction, including: 
+- data preprocessing
+- model selection
+- evaluation
+- deployment.
+The project leverages machine learning techniques to build an effective predictive model for identifying individuals at risk of stroke.
+
+## Deployment
+For the deployment result: [Hugging-Face](https://huggingface.co/spaces/LuckRafly/Stroke_Prediction)
+
+**Screenshot:**
+
+![Hugging_Face](<img width="283" alt="image" src="https://github.com/RaflyQowi/End-to-end-ML-Stroke-Prediction/assets/117436383/2a9abea3-a177-4e5c-abd8-cd191cfcee40">)
+
+
 
 ## Data
 **Dataset Source:** [Kaggle Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset/data)
@@ -132,18 +147,7 @@ In the final stage of model selection, we compared the performance of two Random
 | Weighted Avg       | 0.95      | 0.72   | 0.80     | 1022    |
 
 **Confusion Matrix**:
+
 ![Confusion Matrix Random Forest with Threshold](https://github.com/RaflyQowi/End-to-end-ML-Stroke-Prediction/blob/main/image/Heatmap%20Random%20Forest.png)
 
 Ultimately, we chose the RandomForest model with a threshold of 0.19. This model exhibits improved fairness in predicting true positives, as reflected by the increased recall and F1 score for the positive class. Although accuracy decreases slightly, the trade-off is well-justified by the enhancement in the model's ability to identify instances of stroke accurately.
-
-## Results
-
-Our model achieved promising results in stroke prediction, and we observed several key findings and insights:
-
-- The combination of resampling techniques, SMOTE and ENN, helped mitigate class imbalance and improved model performance.
-- The RandomForestClassifier exhibited the highest accuracy and F1-score among the models we tested.
-- Visualizations, including ROC curves and precision-recall curves, helped us understand the trade-offs between precision and recall for different threshold levels.
-
-For a more detailed summary of results, refer to the performance metrics and visualizations in the project documentation.
-
-<!-- Continue with the rest of the README structure as previously provided -->
