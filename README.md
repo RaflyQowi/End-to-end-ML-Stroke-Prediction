@@ -82,8 +82,6 @@ For the stroke prediction task, we employed a variety of machine learning models
 - Multi-Layer Perceptron (MLP) Classifier
 - Linear Discriminant Analysis (LDA)
 
-## Evaluation
-
 ## Model Evaluation
 
 We conducted a comprehensive evaluation of various machine learning classifiers, optimizing their hyperparameters with GridSearchCV. The results are summarized in the table below. The ROC AUC score served as the primary evaluation metric for distinguishing positive and negative classes.
@@ -99,6 +97,8 @@ We conducted a comprehensive evaluation of various machine learning classifiers,
 Based on the highest ROC AUC score of 0.9988, we selected the **RandomForest** classifier as the best model. Its exceptional performance in stroke prediction makes it the preferred choice.
 
 **Visualizations:** We also utilized various visualizations, such as confusion matrices, ROC curves, and precision-recall curves, to assess model performance visually.
+
+
 
 ## Results
 
