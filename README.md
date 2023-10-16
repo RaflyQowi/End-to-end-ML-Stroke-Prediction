@@ -96,8 +96,11 @@ We conducted a comprehensive evaluation of various machine learning classifiers,
 
 Based on the highest ROC AUC score of 0.9988, we selected the **RandomForest** classifier as the best model. Its exceptional performance in stroke prediction makes it the preferred choice.
 
-**Visualizations:** We also utilized various visualizations, such as confusion matrices, ROC curves, and precision-recall curves, to assess model performance visually.
+**Visualizations:** 
+- ROC Curve on Random Forest
+![alt text](https://github.com/RaflyQowi/End-to-end-ML-Stroke-Prediction/blob/main/image/ROC%20Curve%20Random%20Forest.png?raw=true)
 
+## Choosing the Best Model
 
 
 ## Results
