@@ -34,9 +34,7 @@ This dataset is intended for building a predictive model to determine stroke ris
 
 ## Dependencies
 Install the required dependencies from the requirements.txt file:
-'''
-pip install -r requirements.txt
-'''
+'''aaaa''''
 
 <!-- Add additional sections as needed -->
 
