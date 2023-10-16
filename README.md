@@ -113,7 +113,7 @@ Based on the highest ROC AUC score of 0.9988, we selected the **RandomForest** c
 
 **Visualizations:** 
 
-- ROC Curve on Random Forest
+- ROC Curve on Random Forest on Testing data
 
 ![ROC Curve - Random Forest](https://github.com/RaflyQowi/End-to-end-ML-Stroke-Prediction/blob/main/image/ROC%20Curve%20Random%20Forest.png?raw=true)
 
