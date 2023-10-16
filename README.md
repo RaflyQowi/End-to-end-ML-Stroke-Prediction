@@ -84,12 +84,19 @@ For the stroke prediction task, we employed a variety of machine learning models
 
 ## Evaluation
 
-We evaluated the performance of our models using several metrics commonly used for classification tasks, including:
+## Model Evaluation
 
-- Accuracy: The ratio of correctly predicted instances to the total instances.
-- Precision: The proportion of true positive predictions among all positive predictions.
-- Recall: The proportion of true positive predictions among all actual positive instances.
-- F1-Score: The harmonic mean of precision and recall, which helps balance these two metrics.
+We conducted a comprehensive evaluation of various machine learning classifiers, optimizing their hyperparameters with GridSearchCV. The results are summarized in the table below. The ROC AUC score served as the primary evaluation metric for distinguishing positive and negative classes.
+
+| Classifier               | Best Parameters                                        | ROC AUC Score     |
+|--------------------------|-------------------------------------------------------|-------------------|
+| RandomForest              | {'max_depth': None, 'n_estimators': 200}             | 0.9988            |
+| GradientBoosting         | {'learning_rate': 0.1, 'n_estimators': 200}          | 0.9891            |
+| SVM (Support Vector Machine) | {'C': 10, 'kernel': 'rbf'}                         | 0.9922            |
+| KNeighbors               | {'n_neighbors': 7, 'weights': 'distance'}           | 0.9966            |
+| MLP (Multi-layer Perceptron) | {'activation': 'relu', 'hidden_layer_sizes': (100, 50, 25)} | 0.9969 |
+
+Based on the highest ROC AUC score of 0.9988, we selected the **RandomForest** classifier as the best model. Its exceptional performance in stroke prediction makes it the preferred choice.
 
 **Visualizations:** We also utilized various visualizations, such as confusion matrices, ROC curves, and precision-recall curves, to assess model performance visually.
 
