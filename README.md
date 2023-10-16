@@ -99,10 +99,40 @@ Based on the highest ROC AUC score of 0.9988, we selected the **RandomForest** c
 **Visualizations:** 
 - ROC Curve on Random Forest
 
-![alt text](https://github.com/RaflyQowi/End-to-end-ML-Stroke-Prediction/blob/main/image/ROC%20Curve%20Random%20Forest.png?raw=true)
+![ROC Curve - Random Forest](https://github.com/RaflyQowi/End-to-end-ML-Stroke-Prediction/blob/main/image/ROC%20Curve%20Random%20Forest.png?raw=true)
 
 ## Choosing the Best Model
+## Choosing the Best Model
 
+In the final stage of model selection, we compared the performance of two RandomForest models: one without a specific threshold and one with a threshold of 0.19. Here's a concise summary of their evaluation results:
+
+### RandomForest
+
+|                    | Precision | Recall | F1-Score | Support |
+|--------------------|-----------|--------|----------|---------|
+| 0                  | 0.97      | 0.87   | 0.92     | 976     |
+| 1                  | 0.12      | 0.39   | 0.19     | 46      |
+| Accuracy           |           |        | 0.85     | 1022    |
+| Macro Avg          | 0.55      | 0.63   | 0.55     | 1022    |
+| Weighted Avg       | 0.93      | 0.85   | 0.88     | 1022    |
+
+**Confusion Matrix**:
+![Confusion Matrix Random Forest](https://github.com/RaflyQowi/End-to-end-ML-Stroke-Prediction/blob/main/image/Heatmap%20Random%20Forest.png)
+
+### RandomForest with Threshold (0.19)
+
+|                    | Precision | Recall | F1-Score | Support |
+|--------------------|-----------|--------|----------|---------|
+| 0                  | 0.99      | 0.72   | 0.83     | 976     |
+| 1                  | 0.12      | 0.78   | 0.20     | 46      |
+| Accuracy           |           |        | 0.72     | 1022    |
+| Macro Avg          | 0.55      | 0.75   | 0.52     | 1022    |
+| Weighted Avg       | 0.95      | 0.72   | 0.80     | 1022    |
+
+**Confusion Matrix**:
+![Confusion Matrix Random Forest with Threshold](https://github.com/RaflyQowi/End-to-end-ML-Stroke-Prediction/blob/main/image/Heatmap%20Random%20Forest.png)
+
+Ultimately, we chose the RandomForest model with a threshold of 0.19. This model exhibits improved fairness in predicting true positives, as reflected by the increased recall and F1 score for the positive class. Although accuracy decreases slightly, the trade-off is well-justified by the enhancement in the model's ability to identify instances of stroke accurately.
 
 ## Results
 
