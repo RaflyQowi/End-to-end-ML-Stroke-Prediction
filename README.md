@@ -42,5 +42,65 @@ pip install -r requirements.txt
 Explain how to set up and install the project on a local machine:
 [Python Virtual Environment Documentation](https://docs.python.org/3/library/venv.html)
 
+## Resampling
+
+Given the severe class imbalance in the stroke dataset, with a significantly larger number of samples in the "no stroke" class (0) compared to the "stroke" class (1), we employed resampling techniques to address this issue.
+
+**Original Dataset:**
+
+- Class 0 (No Stroke): 4,861 samples
+- Class 1 (Stroke): 249 samples
+
+We used the following resampling techniques to balance the classes and improve the predictive performance of our models:
+
+1. **Over-sampling with SMOTE (Synthetic Minority Over-sampling Technique):**
+
+   - SMOTE generates synthetic samples for the minority class (stroke) to match the number of samples in the majority class (no stroke).
+   - It creates synthetic data points by interpolating between neighboring samples, effectively expanding the size of the minority class.
+   
+2. **Under-sampling with ENN (Edited Nearest Neighbors):**
+
+   - ENN is an under-sampling technique that removes some of the noisy samples from the majority class.
+   - It identifies samples in the majority class that are misclassified as the minority class based on their nearest neighbors and eliminates them.
+
+The combination of SMOTE for oversampling and ENN for undersampling helps create a balanced dataset while eliminating noisy data points from the majority class. This balanced dataset is used as input for our machine learning models to enhance their predictive accuracy and robustness, particularly for detecting strokes. The improved class balance plays a crucial role in achieving better model performance, as evident from the results section.
+
+## Model
+
+For the stroke prediction task, we employed a variety of machine learning models and techniques to build a predictive model. Our aim was to find the model that offered the best performance for this classification problem.
+
+**Models Used:**
+- Random Forest Classifier
+- Gradient Boosting Classifier
+- AdaBoost Classifier
+- Support Vector Machine (SVC)
+- Logistic Regression
+- Stochastic Gradient Descent (SGD) Classifier
+- K-Nearest Neighbors (KNN) Classifier
+- Gaussian Naive Bayes Classifier
+- Decision Tree Classifier
+- Multi-Layer Perceptron (MLP) Classifier
+- Linear Discriminant Analysis (LDA)
+
+## Evaluation
+
+We evaluated the performance of our models using several metrics commonly used for classification tasks, including:
+
+- Accuracy: The ratio of correctly predicted instances to the total instances.
+- Precision: The proportion of true positive predictions among all positive predictions.
+- Recall: The proportion of true positive predictions among all actual positive instances.
+- F1-Score: The harmonic mean of precision and recall, which helps balance these two metrics.
+
+**Visualizations:** We also utilized various visualizations, such as confusion matrices, ROC curves, and precision-recall curves, to assess model performance visually.
+
+## Results
+
+Our model achieved promising results in stroke prediction, and we observed several key findings and insights:
+
+- The combination of resampling techniques, SMOTE and ENN, helped mitigate class imbalance and improved model performance.
+- The RandomForestClassifier exhibited the highest accuracy and F1-score among the models we tested.
+- Visualizations, including ROC curves and precision-recall curves, helped us understand the trade-offs between precision and recall for different threshold levels.
+
+For a more detailed summary of results, refer to the performance metrics and visualizations in the project documentation.
 
 <!-- Continue with the rest of the README structure as previously provided -->
