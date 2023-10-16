@@ -151,3 +151,24 @@ In the final stage of model selection, we compared the performance of two Random
 ![Confusion Matrix Random Forest with Threshold](https://github.com/RaflyQowi/End-to-end-ML-Stroke-Prediction/blob/main/image/Heatmap%20Random%20Forest%20with%20Threshold.png)
 
 Ultimately, we chose the RandomForest model with a threshold of 0.19. This model exhibits improved fairness in predicting true positives, as reflected by the increased recall and F1 score for the positive class. Although accuracy decreases slightly, the trade-off is well-justified by the enhancement in the model's ability to identify instances of stroke accurately.
+
+## Results
+
+Our model achieved promising results in stroke prediction, and we observed several key findings and insights:
+
+- The combination of resampling techniques, SMOTE and ENN, helped mitigate class imbalance and improved model performance.
+- The RandomForestClassifier exhibited the highest accuracy and F1-score among the models we tested.
+- Visualizations, including ROC curves and precision-recall report, helped us understand the trade-offs between precision and recall for different threshold levels.
+
+For a more detailed summary of results, refer to the performance metrics and visualizations in the project documentation.
+
+### Future Work
+
+Given these findings, future work should focus on improving the model's performance, particularly its precision and recall for the 'Stroke' class. This could potentially be achieved by:
+
+- Collecting more data: More diverse and representative data could help improve the model's learning and generalization.
+- Balancing the classes: Using resampling techniques or adjusting the class weights could help address the class imbalance in the dataset.
+- Feature engineering:  Creating new features or transforming existing ones could help improve the model's predictive power.
+- Trying different models or tuning hyperparameters: Different models or hyperparameters might be better suited to this dataset and prediction task.
+
+Feel free to consider and elaborate on these future work suggestions based on your project's context and goals
