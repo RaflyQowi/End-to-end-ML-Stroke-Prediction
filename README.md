@@ -30,8 +30,6 @@ Here are explanations for the dataset features:
 
 This dataset is intended for building a predictive model to determine stroke risk based on these attributes.
 
-<!-- Add additional sections as needed -->
-
 ## Dependencies
 
 To install the required dependencies, use the following command:
@@ -40,16 +38,9 @@ To install the required dependencies, use the following command:
 pip install -r requirements.txt
 ```
 
-<!-- Add additional sections as needed -->
-
 ## Installation
-Explain how to set up and install the project on a local machine. This could include setting up a virtual environment and installing dependencies using `pip`.
+Explain how to set up and install the project on a local machine:
+[Python Virtual Environment Documentation](https://docs.python.org/3/library/venv.html)
 
-<!-- Add additional sections as needed -->
-
-## Usage
-Provide instructions on how to use your code. Include examples of how to load the model, make predictions, and interpret the results. If you have a web interface, explain how to run it locally.
-
-<!-- Add additional sections as needed -->
 
 <!-- Continue with the rest of the README structure as previously provided -->
