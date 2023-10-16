@@ -148,6 +148,6 @@ In the final stage of model selection, we compared the performance of two Random
 
 **Confusion Matrix**:
 
-![Confusion Matrix Random Forest with Threshold](https://github.com/RaflyQowi/End-to-end-ML-Stroke-Prediction/blob/main/image/Heatmap%20Random%20Forest.png)
+![Confusion Matrix Random Forest with Threshold](https://github.com/RaflyQowi/End-to-end-ML-Stroke-Prediction/blob/main/image/Heatmap%20Random%20Forest%20with%20Threshold.png)
 
 Ultimately, we chose the RandomForest model with a threshold of 0.19. This model exhibits improved fairness in predicting true positives, as reflected by the increased recall and F1 score for the positive class. Although accuracy decreases slightly, the trade-off is well-justified by the enhancement in the model's ability to identify instances of stroke accurately.
